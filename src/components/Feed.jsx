@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import {Box, Stack, Typography} from '@mui/material';
-import { Sidebar } from './index.js'
+import { Sidebar, Videos } from './index.js'
 const Feed = () => {
     const date = new Date();
     const atual_year = date.getFullYear();
@@ -13,6 +13,12 @@ const Feed = () => {
                 <Typography className='copyright' variant='body2' sx={{ mt: 1.5, color: '#fff' }}>
                     Copyright {atual_year} JSM Media
                 </Typography>
+            </Box>
+            <Box p={2} sx={{overflowY: 'auto', height: '90vh', flex: 2}}>
+                <Typography variant="h4" fontWeight="bold" mb={2} sx={{color: 'white'}}>
+                    New <span style={{color: '#f31503'}}>videos</span>
+                </Typography>
+                <Videos videos={[]} />
             </Box>
         </Stack>
     )}
